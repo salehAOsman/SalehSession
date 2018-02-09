@@ -1,0 +1,22 @@
+﻿@model DisplayLIstBySession.Models.Person
+
+@{
+    ViewBag.Title = "AddPerson";
+}
+<h2>AddPerson</h2>
+<!--the user going to fill this form it's going to press submit button the HTML that gets submitted back to the server it's  -->
+<!--going to have a key pair list of books to the server it's going to have a key pair list of books properties  and valuies-->
+<!--there is somthing called the model binding inside MVC for actualy going to do a lot of work for me and it's going to get that book from the -->
+<!-- stream of data coming from the client back to the server and it's going to create new object call  new book and from this object witch -->
+<div>
+    @using (Html.BeginForm(new { @class="form-control"} ))
+     {
+        @Html.ValidationSummary()
+        <p><a>@Html.LabelFor(x=>Model.Id)</a><a>@Html.TextBoxFor(x => Model.Id)</a></p>
+        <p><a>@Html.LabelFor(x=>Model.Name)</a><a>@Html.TextBoxFor(x => Model.Name)</a></p>
+        <p><a>@Html.LabelFor(x => Model.Phone)</a><a>@Html.TextBoxFor(x => x.Phone)</a></p>
+        <p><a>@Html.LabelFor(x => Model.City)</a><a>@Html.TextBoxFor(x => Model.City)</a></p>
+        @*<p><a>@Html.LabelFor(x => Model.PublishDate)</a><a>@Html.EditorFor(x => Model.PublishDate)</a></p>*@
+        <input type="submit" name="Add Person" value="Add" />
+     }
+</div>

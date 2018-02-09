@@ -1,0 +1,37 @@
+﻿@model List<DisplayLIstBySession.Models.Person>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<div>
+    Show the Person info here 
+</div>
+<div>
+        <table class="table">
+            <thead>
+            <tr >
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>City</th>
+                @*<th>PublishDate</th>*@
+            </tr>
+            </thead>
+                @foreach (var item  in Model)
+                 {
+                  <tbody>
+                  <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Phone</td>
+                    <td>@item.City</td>
+                    @*<td>@book.PublishDate.ToShortDateString()</td>*@
+                  </tr>
+                  </tbody>
+                 }
+        </table>
+</div>
+<div>
+    <!--when we hit this like it will call action "AddPerson" type of Get not post becuase type of post will hit by submit button  -->
+    @Html.ActionLink("add new Person", "AddPerson")
+</div>
